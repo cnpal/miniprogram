@@ -9,6 +9,9 @@ Page({
   },
   handleTabClick(event){
     console.log(event)
+  },
+  onLoad:function(options){
+
   }
 
 })
