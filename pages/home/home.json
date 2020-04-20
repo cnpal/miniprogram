@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "m-tab-control": "/components/m-tab-control/tab-control"
+  }
 }

@@ -1,2 +1,3 @@
 <!--pages/home/home.wxml-->
-<text></text>
+<m-tab-control titles="{{['衣服','裤子','鞋子']}}"
+bind:itemclick="handleTabClick"/>

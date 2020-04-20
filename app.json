@@ -12,7 +12,7 @@
     "navigationBarTitleText": "购物街",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "dark",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "selectedColor": "#ff5777",
@@ -42,5 +42,6 @@
         "selectedIconPath": "assets/tabbar/profile_active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
