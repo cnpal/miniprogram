@@ -1,6 +1,6 @@
 <!--components/m-tab-control/tab-control.wxml-->
 <view class="tab-control">
-	<block wx:for="{{titles}}" wx:key="{{index}}">
+	<block wx:for="{{titles}}" wx:key="index">
 		<view class="tab-item {{currentIndex == index ? 'active':''}}" 
     bind:tap="habdleItemClick" 
     data-index="{{index}}">

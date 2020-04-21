@@ -1,3 +1,14 @@
 <!--pages/home/home.wxml-->
-<m-tab-control titles="{{['衣服','裤子','鞋子']}}"
-bind:itemclick="handleTabClick"/>
+<!-- 轮播图 -->
+<m-swiper list="{{banners}}"/>
+<!-- 推荐数据展示 -->
+<m-recommend recommends="{{recommends}}"/>
+<!--本周流行-->
+<view class="popular">
+  <image src="/assets/home/popular_bg.jpg" mode="widthFix"/>
+</view>
+<!--tab control的数据-->
+<m-tab-control titles="{{titles}}"
+               bind:tabclick="handleTabclick"
+               id="tab-control"
+               class="{{isFiexd?'fiexd':''}}"/>
