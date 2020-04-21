@@ -76,23 +76,68 @@ _getGoodsData(type){
 //提供假数据
 setGoodsData(type){
   const oldlist=this.data.goods[type].list;
+   //1根据type 获取页码
+   const page= this.data.goods[type].page+1;
   for(var i= 0;i<30;i++){
     const item = { title: '烟花烫2019秋季新款时尚淑女中式绣花立领衬衫', image:'https://img13.360buyimg.com/n1/s350x449_jfs/t1/51877/11/5741/206670/5d36c899Ea1cab487/87559e3f76d477c3.jpg!cc_350x449.jpg',price:199.9,cfav:208};
     oldlist.push(item);
     //设置数据
     const listKey = `goods.${type}.list`;
+     //获取goods中的page
+     const pageKey = `goods.${type}.page`;
     this.setData({
-      [listKey]:oldlist
+      [listKey]:oldlist,
+      [pageKey]:page
     })
   }
 },
-  // ---------------时间监听函数-------------
+  // ---------------事件监听函数-------------
 
   handleTabclick(event){
     const index = event.detail.index;
     this.setData({
       currentType:types[index]
     })
+  },
+/**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    //上拉加载更多
+    // this._getGoodsdata(this.data.currentType);
+    this.setGoodsData(this.data.currentType)
+  },
+
+  // onPageScroll: function(options){
+  //   const scrollTop = options.scrollTop;
+  //   //回到顶部
+  //   const flag=scrollTop >=BACKTOPDIS
+  //   //官方提示，不建议在onPageScroll 频繁的调用this.setData方法
+  //   //因为会不断的刷新界面
+  //   if(flag!=this.data.showBacktop){
+  //     this.setData({
+  //       showBacktop:flag
+  //     })
+  //   }
+ 
+  //   //tabcontrol停留效果
+  //   const flag2=scrollTop>=this.data.tabScrollTop;
+  //   if(flag2!=this.data.isFiexd){
+  //     this.setData({
+  //       isFiexd:flag2
+  //     })
+  //   }
+
+    
+  // },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '购物街商城',
+    }
   }
 
 })

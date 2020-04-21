@@ -15,8 +15,4 @@
 
 
 <!-- 展示商品数据 -->
-<view class="goods">
-<block wx:for="{{goods[currentType].list}}" wx:key="index">
-<view class="good-item">{{item.title}}</view>
-</block>
-</view>
+<m-goods goods="{{goods[currentType].list}}"/>

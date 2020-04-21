@@ -2,6 +2,7 @@
   "usingComponents": {
     "m-swiper": "/components/m-swiper/m-swiper",
     "m-tab-control": "/components/m-tab-control/tab-control",
+    "m-goods": "/components/m-goods/m-goods",
     "m-recommend": "./childcpn/m-recommend/m-recommend"
   }
 }
