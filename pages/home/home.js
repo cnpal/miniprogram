@@ -1,5 +1,6 @@
 // pages/home/home.js
 import { getMultidata,getGoodsdata } from '../../net/home.js'
+const types = ['pop','new','sell']
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
       pop:{page:0,list:[]},
       new:{page:0,list:[]},
       sell:{page:0,list:[]}
-    }
+    },
+    currentType: 'pop'
   },
   handleTabClick(event) {
     console.log(event)
@@ -26,6 +28,9 @@ Page({
     
     //给流行精选设置假数据
     this.setGoodsData('pop')
+    this.setGoodsData('new')
+    this.setGoodsData('sell')
+
   },
 
   // ---------------网络请求函数-------------
@@ -85,7 +90,9 @@ setGoodsData(type){
 
   handleTabclick(event){
     const index = event.detail.index;
-    console.log(index)
+    this.setData({
+      currentType:types[index]
+    })
   }
 
 })
